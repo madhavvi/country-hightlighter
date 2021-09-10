@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Countries from '../Countries/Countries';
+import Regions from '../Regions/Regions';
 import Header from '../Header/Header';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
         <Header />
       </header>
-      <Countries />
+      <Regions />
     </div>
   );
 }
