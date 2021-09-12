@@ -1,0 +1,64 @@
+.gridContainer {
+    width: 87%;
+    max-width: 1250px;
+    padding: 30px 10px;
+    margin: auto;
+    display: flex;
+}
+
+.container {
+    display: block;
+    width: 100%;
+    text-align: left;
+
+      /* css for displaying cards as a flex, not as a column */
+     /* display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     flex-wrap: wrap; */
+}
+
+.countryCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid #808080a1;
+    box-shadow: none !important;
+}
+
+.countryTitle {
+    width: 170px;
+    margin: 15px;
+    display: inline-block;
+}
+
+.activeCountries {
+    border-color: #e3127e !important;
+    color: #e3127e !important;
+}
+
+@media screen and (max-width: 1024px) and (min-height: 300px) {
+    .container {
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 520px) and (min-height: 300px) {
+    .gridContainer {
+        width: 100%;
+    }
+    
+    .container {
+        text-align: center;
+    }
+
+    .countryTitle {
+        margin: 8px;
+        width: 120px;
+    }
+}
+

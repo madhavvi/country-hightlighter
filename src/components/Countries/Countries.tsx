@@ -1,24 +1,28 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Card, Grid, Typography, makeStyles, Container } from "@material-ui/core";
+import './Countries.css';
+import { Country } from "../../Utils/models";
 
 interface OwnProps {
-    countries: any;
+    countries: Country[];
     crtRegion: string;
 }
 
 const useStyles = makeStyles((_theme) => ({
     cardGridContainer: {
-        width: '65vw',
-        maxWidth: 850,
+        width: '70vw',
+        maxWidth: 1250,
         padding: '30px 10px',
         margin: 'auto',
+        display: 'flex'
     },
     cardContainer: {
         display: 'block',
         width: '100%',
+        textAlign: 'left',
 
-        //  css for displaying as a flex, not as a column
+        //  css for displaying cards as a flex, not as a column
         // display: 'flex',
         // flexDirection: 'row',
         // justifyContent: 'space-between',
@@ -35,9 +39,9 @@ const useStyles = makeStyles((_theme) => ({
         boxShadow: 'none !important'
     },
     countryTitle: {
+        width: 170,
         margin: 15,
-        display: 'inline-block',
-        width: 170
+        display: 'inline-block'
     },
     cardActive: {
         borderColor: '#e3127e !important',
@@ -71,22 +75,30 @@ const Countries: React.FC<Props> = ({
     return (
         <>
             <Container>
-                {countries && (
-                    <Grid item className={classes.cardGridContainer}>
-                        <Grid item className={classes.cardContainer}>
-                            {countries.map((country: any, idx: number) => (
-                                <Grid key={idx} className={classes.countryTitle}>
-                                    <Card 
-                                        className={`${ selectedCountries.includes(country.name) ? `${classes.cardActive}` : '' } ${classes.cardRegion}`} 
-                                        onClick={() => selectCoutries(country.name)}
-                                    >
-                                        <Typography>{country.name}</Typography>
-                                    </Card>
-                                </Grid>
-                            ))}
+                <Grid>
+                    <p>
+                        <b>{crtRegion}</b>:
+                        <i> listing {countries.length} {countries.length === 1 ? 'country' : 'countries'}</i>
+                    </p>
+                </Grid>
+                <Grid>
+                    {countries && (
+                        <Grid className="gridContainer">
+                            <Grid item className="container">
+                                {countries.map((country: Country, idx: number) => (
+                                    <Grid key={idx} className="countryTitle">
+                                        <Card 
+                                            className={`${ selectedCountries.includes(country.name) ? 'activeCountries' : '' } countryCard`} 
+                                            onClick={() => selectCoutries(country.name)}
+                                        >
+                                            <Typography style={{ textAlign: 'center' }}>{country.name}</Typography>
+                                        </Card>
+                                    </Grid>
+                                ))}
+                            </Grid>
                         </Grid>
-                    </Grid>
-                )}
+                    )}
+                </Grid>
             </Container>
         </>
     )

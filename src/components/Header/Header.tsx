@@ -1,7 +1,7 @@
-import { Grid } from '@material-ui/core';
 import React from 'react';
-import './Header.css';
+import { Grid } from '@material-ui/core';
 import logo from '../../Assets/logo-white.svg';
+import './Header.css';
 
 function Header() {
   return (

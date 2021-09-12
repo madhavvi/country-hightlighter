@@ -10,6 +10,7 @@
 .loader {
     width: 60px !important;
     height: 60px !important;
+    color: #e3127e !important;
 }
 
 .mainContainer {
@@ -41,15 +42,26 @@
     height: 60px;
     cursor: pointer;
 }
-.cardActive {
+.activeRegion {
     background-color: #e3127e !important;
     color: white !important;
 }
 
 
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 670px) and (min-height: 300px) {
     .subTitle {
         font-size: 1.5em !important;
+    }
+
+    .cardGridContainer {
+        max-width: 100%;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .cardRegion {
+        width: 100px;
+        height: 40px;
     }
 }
