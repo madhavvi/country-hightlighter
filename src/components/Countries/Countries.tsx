@@ -1,34 +1,28 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import { Card, Grid, Typography, makeStyles, Container } from "@material-ui/core";
 
 interface OwnProps {
     countries: any;
+    crtRegion: string;
 }
 
 const useStyles = makeStyles((_theme) => ({
-    loadingContainer: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        margin: 'auto',
-        height: '60vh'
-    },
-    loader: {
-        width: '60px !important',
-        height: '60px !important'
-    },
     cardGridContainer: {
         width: '65vw',
         maxWidth: 850,
-        padding: '30px',
+        padding: '30px 10px',
         margin: 'auto',
     },
     cardContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap'
+        display: 'block',
+        width: '100%',
+
+        //  css for displaying as a flex, not as a column
+        // display: 'flex',
+        // flexDirection: 'row',
+        // justifyContent: 'space-between',
+        // flexWrap: 'wrap'
     },
     cardRegion: {
         display: 'flex',
@@ -41,7 +35,13 @@ const useStyles = makeStyles((_theme) => ({
         boxShadow: 'none !important'
     },
     countryTitle: {
-        margin: 15
+        margin: 15,
+        display: 'inline-block',
+        width: 170
+    },
+    cardActive: {
+        borderColor: '#e3127e !important',
+        color: '#e3127e !important'
     }
 }));
 
@@ -49,18 +49,37 @@ type Props = OwnProps;
 
 const Countries: React.FC<Props> = ({
     countries,
+    crtRegion,
 }) => {
     const classes = useStyles();
-    console.log('countries : ', countries);
+    const [selectedCountries, setSelectedCountires] = useState<string[]>([]);
+    
+    // if you want to memoize the countries selected from other regions, comment below 3 lines
+    useEffect(() => {
+        setSelectedCountires([]);
+    }, [crtRegion]);
+    
+    // toggle select countries
+    const selectCoutries = (country: string) => {
+        if (!selectedCountries.includes(country)) {
+            setSelectedCountires(arr => [...arr, country]);
+        } else {
+            setSelectedCountires(selectedCountries.filter(item => item !== country)); 
+        }
+    }
+
     return (
         <>
             <Container>
                 {countries && (
-                    <Grid item xs={12} md={12} lg={12} className={classes.cardGridContainer}>
-                        <Grid item xs={12} md={12} lg={12} className={classes.cardContainer}>
+                    <Grid item className={classes.cardGridContainer}>
+                        <Grid item className={classes.cardContainer}>
                             {countries.map((country: any, idx: number) => (
                                 <Grid key={idx} className={classes.countryTitle}>
-                                    <Card className={classes.cardRegion}>
+                                    <Card 
+                                        className={`${ selectedCountries.includes(country.name) ? `${classes.cardActive}` : '' } ${classes.cardRegion}`} 
+                                        onClick={() => selectCoutries(country.name)}
+                                    >
                                         <Typography>{country.name}</Typography>
                                     </Card>
                                 </Grid>
@@ -71,6 +90,6 @@ const Countries: React.FC<Props> = ({
             </Container>
         </>
     )
-}
+};
 
 export default Countries;

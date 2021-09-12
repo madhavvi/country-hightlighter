@@ -1,0 +1,55 @@
+.loadingContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    height: 60vh;
+}
+
+.loader {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.mainContainer {
+    padding: 3%;
+
+}
+.subTitle {
+    font-size: 2.1em;
+    line-height: 1.4;
+}
+.cardGridContainer {
+    width: 65vw;
+    max-width: 850px;
+    padding: 30px;
+    margin: auto !important;
+}
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.cardRegion {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 140px;
+    height: 60px;
+    cursor: pointer;
+}
+.cardActive {
+    background-color: #e3127e !important;
+    color: white !important;
+}
+
+
+
+@media screen and (max-width: 420px) {
+    .subTitle {
+        font-size: 1.5em !important;
+    }
+}

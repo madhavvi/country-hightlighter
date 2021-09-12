@@ -8,20 +8,19 @@
 
 .title-block {
     display: flex;
-    padding: 0 20px 40px 20px;
+    padding: 0 20px 30px 20px;
 }
 
 .img-logo {
     width: 10%;
     padding: 1rem 1rem;
-    float: right;
     min-height: 50px;
     min-width: 150px;
 }
 
 .page-title {
     width: 100%;
-    font-size: 2em;
+    font-size: 1.7em;
     font-weight: 400;
 }
 
@@ -31,10 +30,7 @@
     }
 
     .img-logo {
-        width: 30%
-    }
-
-    .page-title {
-        width: 100%;
+        width: 25%;
+        min-width: 100px;
     }
 }
