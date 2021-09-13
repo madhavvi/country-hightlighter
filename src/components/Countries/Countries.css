@@ -32,7 +32,12 @@
 .countryTitle {
     width: 170px;
     margin: 15px;
+
+    /* for column view */
     display: inline-block;
+
+    /* for flex layout view */
+    /* display: flex; */
 }
 
 .activeCountries {

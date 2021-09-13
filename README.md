@@ -15,7 +15,7 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 
-## task details:
+## Task details:
 In this frontend test, you will implement a one page app in React from a basic wireframe.
 
 The wireframe should be perceived as a concept and not a finalised design. You are free to either mimic it completely or add your own visual improvements according to your own taste. Ideally the UI should also be responsive when shown on a mobile device, so you may need to do some changes in the design according to your preferences there.
@@ -31,3 +31,13 @@ The color code of the pink color in the design is #e3127e, you are encouraged to
 The for the Utopia Logo for the avatar, you can use https://utopiamusic.com/logo.
 
 
+## Notes:
+1. User can select/unselect Region and Country.
+2. If no Region selected, "No region selected" message will be displyed below region cards.
+3. If region is selected, list of all the corresponding countries will be displyed.
+4. On click of Country, it will be highlighted.
+5. When changing Region selection, component will be re-rendered and it will clear previously (if any) selected corresponding countries. If you want to prevent re-rendering and memoize selected countries on Region change, check comment in Countries.tsx line 21 (useEffect hook).
+6. Country count is displyed above list of countries with Region.
+7. Mobile device support upto min width '320px'. Also supports tablet view both landscape and portrait.
+8. Supports Chrome and Firefox browers.
+9. Country list can also be displayed as a flex layout instead of columns (check comments in "Countries.css" .container and .countryTitle class).
