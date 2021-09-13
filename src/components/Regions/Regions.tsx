@@ -48,6 +48,7 @@ const Regions: React.FC<Props> = ({
         
     }, [countryData]);
     
+    // to show countries for a selected region
     const onRegionClick = (crtReg: string) => {
         const regionalCountries = regions.find((reg: any) => reg.name === crtReg);
 
@@ -82,7 +83,7 @@ const Regions: React.FC<Props> = ({
                             <Grid key={idx}>
                                 {reg.name && (
                                     <Grid style={{ margin: '25px' }}>
-                                        <Card 
+                                        <Card
                                             onClick={() => onRegionClick(reg.name)}
                                             className={`${(crtRegion === reg.name) ? 'activeRegion' : '' } cardRegion`}
                                         >
