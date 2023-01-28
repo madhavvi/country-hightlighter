@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from './redux/rootSaga';
 
-axios.defaults.baseURL = 'https://restcountries.eu/rest/v2/all'
+axios.defaults.baseURL = 'https://restcountries.com/v2/all'
 
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducers, applyMiddleware(sagaMiddleware));
