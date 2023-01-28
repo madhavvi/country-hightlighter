@@ -1,7 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -24,11 +20,7 @@ The functionality of the app is to list countries that are fetched from a public
 
 For the implementation, please use https://stackblitz.com/ and create a new React project and use the default template. When you are finished, just send us the link to your project. If you want to use any external dependencies, you can just enter a package name in the left field menu.
 
-For fetching country data, use https://restcountries.eu/rest/v2/all
-
-The color code of the pink color in the design is #e3127e, you are encouraged to use that as well!
-
-The for the Utopia Logo for the avatar, you can use https://utopiamusic.com/logo.
+For fetching country data, use https://restcountries.com/v2/all
 
 
 ## Notes:
